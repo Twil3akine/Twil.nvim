@@ -22,6 +22,7 @@ km('i', "(", "()<LEFT>", { noremap = true, silent = true })
 km('i', "{", "{}<LEFT>", { noremap = true, silent = true })
 km('i', "[", "[]<LEFT>", { noremap = true, silent = true })
 km('i', "<>", "<><LEFT>", { noremap = true, silent = true })
+--km('i', "  ", "  <LEFT>", { noremap = true, silent = true })
 
 km('i', "(<Enter>", "()<Left><Enter><Enter><Up><Tab>", { noremap = true, silent = true })
 km('i', "{<Enter>", "{}<Left><Enter><Enter><Up><Tab>", { noremap = true, silent = true })
@@ -33,7 +34,7 @@ km('n', 'ff', ':NERDTreeToggle<Enter>', { noremap = true, silent = true })
 --barbar
 km('n', '<C-h>', '<Cmd>BufferPrevious<Enter>', { noremap = true, silent = true })
 km('n', '<C-k>', '<Cmd>BufferNext<Enter>', { noremap = true, silent = true })
-km('n', '<C-e>', '<Cmd>BufferClose<Enter>', { noremap = true, silent = true })
+km('n', '<C-j>', '<Cmd>BufferClose<Enter>', { noremap = true, silent = true })
 
 --termguicolors toggle
 function toggle_termguicolors()
