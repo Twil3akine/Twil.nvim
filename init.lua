@@ -15,6 +15,11 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.clipboard:append('unnamedplus')
 
+-- settings of syntax & colorscheme
+cmd('syntax enable')
+cmd('set background=dark')
+require('colors.twil')
+
 --- setting lazy.nvim
 local lazypath = v.fn.stdpath("data") .. "./lua/lazy/lazy.nvim"
 if not (v.uv or v.loop).fs_stat(lazypath) then
@@ -33,13 +38,8 @@ opt.rtp:prepend(lazypath)
 --- install plugin with lazy.nvim
 require('lazy.lazy')
 require('lazy.noice')
---require('lazy.barbar')
+require('lazy.barbar')
 require('lazy.lualine')
-
--- settings of syntax & colorscheme
-cmd('syntax enable')
-cmd('set background=dark')
-require('colors.twil')
 
 -- settings of NerdTree
 vim.g.NERDTreeShowHidden = 1
@@ -48,5 +48,3 @@ vim.g.NERDTreeShowHidden = 1
 require('settings.autocmds')
 require('settings.keymaps')
 require('settings.smarttab')
-
-opt.guifont = "UbuntuMono Nerd Font:h10"
