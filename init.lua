@@ -14,6 +14,8 @@ opt.autoindent = true
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.clipboard:append('unnamedplus')
+v.g.mapleader = " "
+v.g.maplocalleader = " "
 
 -- settings of syntax & colorscheme
 cmd('syntax enable')

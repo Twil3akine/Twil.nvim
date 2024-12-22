@@ -22,7 +22,7 @@ km('i', "(", "()<LEFT>", { noremap = true, silent = true })
 km('i', "{", "{}<LEFT>", { noremap = true, silent = true })
 km('i', "[", "[]<LEFT>", { noremap = true, silent = true })
 km('i', "<>", "<><LEFT>", { noremap = true, silent = true })
---km('i', "  ", "  <LEFT>", { noremap = true, silent = true })
+-- km('i', "  ", "  <LEFT>", { noremap = true, silent = true })
 
 km('i', "(<Enter>", "()<Left><Enter><Enter><Up><Tab>", { noremap = true, silent = true })
 km('i', "{<Enter>", "{}<Left><Enter><Enter><Up><Tab>", { noremap = true, silent = true })
@@ -31,12 +31,19 @@ km('i', "[<Enter>", "[]<Left><Enter><Enter><Up><Tab>", { noremap = true, silent 
 -- NERDTree
 km('n', 'ff', ':NERDTreeToggle<Enter>', { noremap = true, silent = true })
 
---barbar
+-- Telescope
+km('n', '<leader>t', ':Telescope<Enter>', { noremap = true, silent = true })
+km('n', '<leader>ff', ':Telescope find_files<Enter>', { noremap = true, silent = true })
+km('n', '<leader>fg', ':Telescope live_grep<Enter>', { noremap = true, silent = true })
+km('n', '<leader>fb', ':Telescope buffers<Enter>', { noremap = true, silent = true })
+km('n', '<leader>fh', ':Telescope help_tags<Enter>', { noremap = true, silent = true })
+
+-- barbar
 km('n', '<C-h>', '<Cmd>BufferPrevious<Enter>', { noremap = true, silent = true })
 km('n', '<C-k>', '<Cmd>BufferNext<Enter>', { noremap = true, silent = true })
 km('n', '<C-j>', '<Cmd>BufferClose<Enter>', { noremap = true, silent = true })
 
---termguicolors toggle
+-- termguicolors toggle
 function toggle_termguicolors()
     if vim.opt.termguicolors then
         vim.cmd('se termguicolors!')
