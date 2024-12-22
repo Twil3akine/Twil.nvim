@@ -42,6 +42,7 @@ require('lazy.lazy')
 require('lazy.noice')
 require('lazy.barbar')
 require('lazy.lualine')
+require('lazy.telescope')
 
 -- settings of NerdTree
 vim.g.NERDTreeShowHidden = 1
