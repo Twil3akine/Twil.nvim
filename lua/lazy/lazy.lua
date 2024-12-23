@@ -3,6 +3,7 @@ require("lazy").setup({
   { "rcarriga/nvim-notify" },
   { 'lewis6991/gitsigns.nvim' },
   { "nvim-lua/plenary.nvim", },
+  { "SmiteshP/nvim-navic" },
 
   -- dependies
   {
@@ -74,50 +75,28 @@ require("lazy").setup({
   },
 
 
-  {
-    "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      local lspconfig = require("lspconfig")
-      lspconfig.pyright.setup({})
-      lspconfig.clangd.setup({})
-      lspconfig.rust_analyzer.setup({})
-      lspconfig.jdtls.setup({})
-    end
-  },
-
-
+  -- mason.nvim   https://github.com/williamboman/mason.nvim
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
-    config = function()
-      require("mason").setup({
-        ui = {
-          border = "rounded",
-          icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗",
-          },
-        },
-      })
-    end
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "onsails/lspkind.nvim",
+      "hrsh7th/cmp-vsnip",
+      "hrsh7th/vim-vsnip",
+    },
   },
 
 
+  -- incline.nvim   https://github.com/b0o/incline.nvim
   {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "pyright", "lua_ls" },
-        automatic_installaction = true,
-      })
-
-      require("mason-lspconfig").setup_handlers({
-        function(server_name)
-          require("lspconfig")[server_name].setup({})
-        end
-      })
-    end
-  }
+    "b0o/incline.nvim",
+    event = "VeryLazy",
+  },
 })

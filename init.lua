@@ -22,7 +22,7 @@ cmd('syntax enable')
 cmd('set background=dark')
 require('colors.twil')
 
---- setting lazy.nvim
+-- setting lazy.nvim
 local lazypath = v.fn.stdpath("data") .. "./lua/lazy/lazy.nvim"
 if not (v.uv or v.loop).fs_stat(lazypath) then
   v.fn.system({
@@ -37,12 +37,15 @@ end
 
 opt.rtp:prepend(lazypath)
 
---- install plugin with lazy.nvim
+-- install plugin with lazy.nvim
 require('lazy.lazy')
 require('lazy.noice')
 require('lazy.barbar')
 require('lazy.lualine')
 require('lazy.telescope')
+require('lazy.mason')
+require('lazy.mason_lsp')
+require('lazy.incline')
 
 -- settings of NerdTree
 vim.g.NERDTreeShowHidden = 1
@@ -51,3 +54,4 @@ vim.g.NERDTreeShowHidden = 1
 require('settings.autocmds')
 require('settings.keymaps')
 require('settings.smarttab')
+require('settings.refix')

@@ -107,11 +107,11 @@ local colors = {
   },
   Pmenu = {
     cterm = { fg = 89, bg = 15 },
-    gui = { fg = "#e0e0e0", bg = "#494979" }
+    gui = { fg = "#e0e0e0", bg = "#383869" }
   },
   PmenuSel = {
     cterm = { fg = 109, bg = 15 },
-    gui = { fg = "#e0e0e0", bg = "#8080b0" }
+    gui = { fg = "#e0e0e0", bg = "#6c6c9d" }
   },
 }
 
